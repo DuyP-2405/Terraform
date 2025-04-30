@@ -1,5 +1,7 @@
 Terraform: Hybrid Cloud Infrastructure on Azure
 This document outlines the Terraform configurations used to deploy a secure and scalable hybrid cloud infrastructure on Microsoft Azure, designed for the CyberWatch project.
+![topology]
+(https://github.com/user-attachments/assets/2675707a-62d1-4bfc-bdd0-05d737800ee7)
 
 Overview
 The infrastructure includes:
