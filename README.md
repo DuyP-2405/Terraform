@@ -1,24 +1,73 @@
-# Terraform
-This repository contains Terraform configurations and scripts to provision a complete lab environment for learning, testing, and experimenting with Infrastructure as Code (IaC) using Terraform.
-🔧 Key Features
-Modular and reusable Terraform code
+Terraform: Hybrid Cloud Infrastructure on Azure
+This document outlines the Terraform configurations used to deploy a secure and scalable hybrid cloud infrastructure on Microsoft Azure, designed for the CyberWatch project.
 
-Supports multiple cloud providers (e.g., AWS, Azure, GCP) (optional – remove if only one provider is used)
+Overview
+The infrastructure includes:
+- Azure Resource Group
+- Virtual Networks (Hub, Product, Dev)
+- Azure Web Application Firewall (WAF) Policy
+- Azure DDoS Protection Plan
+- (Optional) Integration with hybrid connectivity (VPN/ExpressRoute)
 
-Examples of resource provisioning: networks, VMs, security groups, etc.
+Project Structure
+terraform-hybrid-cloud-azure/
 
-Includes remote backend configuration and state management
+├── main.tf           # Core infrastructure: RG, VNets, DDoS
 
-Follows best practices for Terraform project structure
+├── waf.tf            # WAF policy and configuration
 
-Ideal for hands-on DevOps, cloud engineering, or IaC training.
+├── variables.tf      # All input variable declarations
 
-terraform-lab/
-│
-├── modules/              # Reusable modules
-├── environments/         # Dev, staging, prod, etc.
-├── main.tf               # Root Terraform configuration
-├── variables.tf          # Input variables
-├── outputs.tf            # Output values
-├── README.md             # Documentation
-└── backend.tf            # Remote backend config (if used)
+├── outputs.tf        # Useful Terraform outputs
+
+├── backend.tf        # Remote backend configuration (optional)
+
+└── README.md         # This file
+
+Prerequisites
+- Terraform CLI
+  
+- Azure subscription
+  
+- Service principal credentials (client_id, client_secret, etc.)
+
+Setup
+1. Clone the repo:
+
+    git clone 
+
+    cd terraform-hybrid-cloud-azure
+2. Create terraform.tfvars with your values:
+   
+subscription_id     = "your-subscription-id"
+
+client_id           = "your-client-id"
+
+client_secret       = "your-client-secret"
+
+tenant_id           = "your-tenant-id"
+
+resource_group_name = "your-RG-name"
+
+location            = "your-location"
+
+3. Initialize and deploy:
+
+    terraform init
+   
+    terraform plan
+   
+    terraform apply
+   
+Security Features
+- WAF Policy: OWASP rule set 3.2 with custom exclusions for headers/cookies
+- DDoS Plan: Protects against volumetric attacks
+- Isolation: Dedicated VNets for product and dev workloads
+
+Future Enhancements
+- Hybrid connectivity (VPN/ExpressRoute)
+- Hub-and-Spoke topology expansion
+- Network Watcher & NSG flow logs
+- Monitoring with Log Analytics & Alerts
+
+
