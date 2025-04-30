@@ -1,25 +1,25 @@
 variable "subscription_id" {
   description = "Azure subscription ID"
   type        = string
-  default     = "1358c5e7-e195-41de-bcfe-3027bb3fe91f"
+  default     = "your-sub-ID"
 }
 
 variable "client_id" {
   description = "Azure client ID"
   type        = string
-  default     = "3cbcf2c9-b0d9-4fd0-bc19-b5c46fc0164b"
+  default     = "your-client-ID"
 }
 
 variable "client_secret" {
   description = "Azure client secret"
   type        = string
-  default     = "nAO8Q~iv1TvGqOEL2x29k3EYpqP8HXAym_XY~aZi"
+  default     = "your-sub-secret"
 }
 
 variable "tenant_id" {
   description = "Azure tenant ID"
   type        = string
-  default     = "2a09801c-4b7a-4a9d-83a3-c4069315ceca"
+  default     = "your-tenant-ID"
 }
 variable "resource_group_name" {
   description = "Name of the resource group"
@@ -60,7 +60,7 @@ variable "admin_username" {
 variable "admin_password" {
   description = "Admin password for the VM"
   type        = string
-  default     = "Ha.ant1113Duyphan2405"
+  default     = "your-pass"
 }
 variable "admin_db" {
   description = "Admin username for the DBserver"
@@ -70,7 +70,7 @@ variable "admin_db" {
 variable "admin_db_pw" {
   description = "Admin password for the DBserver"
   type        = string
-  default     = "Duyphan2405.Ha.ant1113"
+  default     = "your-pass"
 }
 
 
@@ -85,7 +85,7 @@ variable "vm_size" {
 variable "email_address" {
   description = "Email address for the alert"
   type        = string
-  default     = "duyphan24052010@gmail.com"
+  default     = "your-alerting-mail"
 }
 variable "ddos_protection_plan_enabled" {
   type        = bool
